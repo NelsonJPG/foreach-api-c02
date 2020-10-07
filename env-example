@@ -1,6 +1,0 @@
-APP_NAME=foreach
-PORT=3010
-DB_HOST=localhost
-DB_PORT=27017
-DB_USER=admin
-DB_PASSWORD=
