@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "6fea58d4-14e5-4f59-a570-1a4ad9c8f731",
+		"name": "foreach",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "travels",
+			"item": [
+				{
+					"name": "get travels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create travel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"startAddress\": \"la niña 3115, Las Condes\",\r\n    \"endAddress\": \"Av. Andrés Bello 2425, Providencia\",\r\n    \"kmTraveled\": 10,\r\n    \"nameOfPerson\":[\"Nelson\", \"Scarlet\", \"Jean Paul\"],\r\n    \"roundtrip\": true,\r\n    \"transport\":\"\"\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3010/v1/travels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"v1",
+								"travels"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "transport",
+			"item": [
+				{
+					"name": "create transport",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Camioneta (Déasel)\",\r\n    \"factor\": 0.249,\r\n    \"active\": true\r\n}"
+						},
+						"url": {
+							"raw": "http://localhost:3010/v1/transport",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"v1",
+								"transport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get all transports",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3010/v1/transport",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3010",
+							"path": [
+								"v1",
+								"transport"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
