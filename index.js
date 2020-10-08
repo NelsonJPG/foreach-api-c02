@@ -5,7 +5,6 @@ import helmet from "helmet";
 import routes from './routes';
 import pkg from './package.json';
 import './database';
-
 import 'dotenv/config';
 //mongoose = require('mongoose'),
 
@@ -13,6 +12,15 @@ import 'dotenv/config';
 //var usersRouter = require('./routes/users');
 
 let api = express();
+api.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+    res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+    res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
+    next();
+});
+
+
 api.use(bodyParser.urlencoded({ extended: false }));
  
 // parse various different custom JSON types as JSON

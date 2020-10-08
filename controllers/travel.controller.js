@@ -43,10 +43,10 @@ class TransportController {
                 kmTraveled: travel.kmTraveled,
                 qtyPerson: travel.nameOfPerson.length,
                 roundtrip: travel.roundtrip? "VERDADERO": "FALSO",
-                totalPerPerson: factorEmision(travel.transport.factor, travel.kmTraveled, travel.roundtrip) /// travel.nameOfPerson.length
+                totalPerPerson: factorEmision(travel.transport.factor, travel.kmTraveled, travel.roundtrip).toFixed(4) /// travel.nameOfPerson.length
             }));
 
-            return res.status(200).json({message: "travels has been found", status:"OK", code: 200, travel: travelFormated});
+            return res.status(200).json({message: "travels has been found", status:"OK", code: 200, travels: travelFormated});
         } catch (error) {
             let custom_error = new Error(error.message);
             custom_error.status = 400;
